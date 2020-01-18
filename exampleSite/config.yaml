@@ -31,14 +31,14 @@ Taxonomies:
 # https://bulkitv2.cssninja.io/_components-icons-fa.html
 
 params:
+  # parameter used to specify the number of article in each row 
+  # for the summary pages, the possible options are: 2, 3, 4, 5 or 6
+  articlesPerRow: 3 
+
   # parameter used to specify if you want to minify the imported js
   jsMinify: false
-  # parameter used to specify if you want to add the fingerprint to the imported js
-  jsFingerprint: false
   # parameter used to specify if you want to minify the imported css
-  cssMinify: true
-  # parameter used to specify if you want to add the fingerprint to the imported css
-  cssFingerprint: true
+  cssMinify: false
   # option to specify the main colour of the theme
   mainColour: "#F39200"
 
@@ -114,24 +114,26 @@ params:
     #   link: your.username
     #   title: Facebook
     # option to specify your github account in the footer; 
-    # **uncomment** the below line to show in footer
+    # **uncomment** the below lines to show in footer
     # github: 
     #   link: username
     #   title: Github
     # option to specify your twitter username in the footer; 
-    # **uncomment** the below line to show in footer
+    # **uncomment** the below lines to show in footer
     # twitter: 
     #    link: username
     #    title: Twitter
     # option to specify your instagram username in the footer; 
-    # **uncomment** the below line to show in footer
+    # **uncomment** the below lines to show in footer
     # instagram: 
     #    link: username
     #    title: Instagram
     # option to specify the copyright in the footer
     copyright: Julia The White - 2019
 
-# multilanguage support
+###################################################################
+################## multilanguage support options ##################
+###################################################################
 languages:
   en:
     languageName:       English

@@ -202,13 +202,15 @@ This shortcode resize an image that with the width and/or height that you specif
 Usage example:
 
 ```
-{{% figure src="images/the_stack.png" width="700" %}}
-{{% figure src="images/the_stack.png" height="700" %}}
+{{< figure src="images/the_stack.png" width="700" >}}
+{{< figure src="images/the_stack.png" height="700" >}}
 ```
 
 The parameter **src** is the location of the image relative to the location of the file where the shortcode has been used.<br>
 The parameter **width** is the width of the image.<br>
 The parameter **height** is the height of the image.<br>
+The parameter **caption** is the caption of the image.<br>
+The parameter **alt** is the alt property of the image.<br>
 
 </details>
 
@@ -220,15 +222,20 @@ This shortcode shows 2 images one next to the other with the possibility to resi
 Usage example:
 
 ```
-{{% twoFigure src1="images/overflow_1.png" width1="700" src2="images/overflow_2.png" width2="700" %}}
+{{< twoFigure src1="images/overflow_1.png" width1="700" src2="images/overflow_2.png" width2="700" >}}
 ```
 
 The parameter **src1** is the location of the right image relative to the location of the file where the shortcode has been used.<br>
 The parameter **width1** is the width of the right image.<br>
 The parameter **height1** is the height of the right image.<br>
+The parameter **caption1** is the caption of the right image.<br>
+The parameter **alt1** is the alt property of the right image.<br>
 The parameter **src2** is the location of the left image relative to the location of the file where the shortcode has been used.<br>
 The parameter **width2** is the width of the left image.<br>
 The parameter **height2** is the height of the left image.<br>
+The parameter **caption2** is the caption of the left image.<br>
+The parameter **alt2** is the alt property of the left image.<br>
+
 
 With a small screen these images will be shown one on top of the other.
 
@@ -460,7 +467,7 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 
 * [highlightjs-line-number.js](https://github.com/wcoder/highlightjs-line-numbers.js/) was added to have the line number at the beginning of each line of code in a code sections of a post.
 
-* A minimal version of [https://www.mathjax.org/](MathJax) was added to allow LaTeX style mathematical expressions to be placed in the site.
+* A minimal version of [MathJax](https://www.mathjax.org/) was added to allow LaTeX style mathematical expressions to be placed in the site.
 
 * Several other options are added to personalise the content of a post. 
 
@@ -473,5 +480,7 @@ To avoid path problems when specifying the `summaryImage`, it is recommended to 
 * The loaders images are now processed with `resources.ExecuteAsTemplate` so that they take the main colour of the theme (defined in `config.yaml`)
 
 * The _favicon_ is processed with `resources.ExecuteAsTemplate` to follow the main colour of the page.
+
+* Added Open Graph meta tags to each post for easy-sharing on social media sites.
 
 * All the js and css files are loaded locally, i.e., not loaded from third party sites. 

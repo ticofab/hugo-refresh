@@ -68,6 +68,10 @@ snap refresh hugo --channel=extended
 
 You can enter your Google / Yandex / etc statistic counter code into the `layouts/partials/counter.html`. Code will be generated right after open `<body>` tag.
 
+## Custom HEAD
+
+If you want to include custom scripts at the end of the `HEAD` section, create a file in `layouts/partials/custom_head.html` and add your content there.
+
 ## Customizing your page
 
 There are different configuration options for Hugo ReFresh including options for: the navbar, the sidebar, the homepage, fonts, colours landing, stats counters and images. 
@@ -240,6 +244,28 @@ The parameter **alt2** is the alt property of the left image.<br>
 With a small screen these images will be shown one on top of the other.
 
 See example of use [here](https://rjordaney.is/lectures/basic_buffer_overflow/)
+
+</details>
+
+<details>
+<summary> twoVideos.html </summary>
+
+This shortcode shows 2 YouTube videos one next to the other.
+
+Usage example:
+
+```
+{{% twoVideos id2="pKRzfdIJUZE" id1="Ncv2KmhVgyU" autoplay1=true ratio1="4:3" ratio2="16:9" %}}
+```
+
+The parameter **id1** is the ID of the left video<br>
+The parameter **id2** is the ID of the right video<br>
+The parameter **autoplay1** is used to start the video on the left (the video will start on mute). Set it to "true" to activate autoplay.<br>
+The parameter **autoplay2** is used to start the video on the left (the video will start on mute). Set it to "true" to activate autoplay.<br>
+The parameter **ratio1** is used to specify the the ratio of the video on the left. It can be either "16:9" or "4:3". The default is "16:9".<br>
+The parameter **ratio2** is used to specify the the ratio of the video on the right. It can be either "16:9" or "4:3". The default is "16:9".<br>
+
+With a small screen these videos will be shown one on top of the other.
 
 </details>
 
@@ -457,7 +483,7 @@ The language supported are:
 
 * Chinese
 
-If you want to add a missing language please submit a pull request.
+If you want to add a missing language please submit a feature request.
 
 
 ## List of modifications from the original theme

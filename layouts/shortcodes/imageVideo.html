@@ -1,0 +1,43 @@
+{{- $id1 := .Get "id1" | default (.Get 0) -}}
+{{- $auto1 := default "false" (.Get "autoplay1") -}}
+{{- $ratio1 := default "16:9" (.Get "ratio1") -}}
+{{ $r1 := "56.25" }}
+{{ if eq $ratio1 "16:9" }}
+{{ $r1 = "56.25"}}
+{{ else if eq $ratio1 "4:3" }}
+{{ $r1 = "75"}}
+{{ end }}
+
+{{- $original1 := (.Page.Resources.ByType "image").GetMatch (printf "*%s*" (.Get "src1")) -}}
+{{- $width1    := printf "%s" (.Get "width1" ) -}}
+{{- $height1   := printf "%s" (.Get "height1") -}}
+{{- $size1     := printf "%sx%s" $width1 $height1 -}}
+{{- $caption1  := printf "%s" (.Get "caption1") -}}
+{{- $alt1      := printf "%s" (.Get "alt1") -}}
+
+<div class="columns is-centered container">
+  <div class="columns is-centered container">
+    <div class="column is-centered container">
+      <div>
+        <div style="position:relative;padding-top:{{ print $r1 }}%;">
+          <iframe src="https://www.youtube.com/embed/{{ $id1 }}{{ with $auto1 }}{{ if or ( or (eq . "true") (eq . true)) (eq . 1) }}?autoplay=1&mute=1{{ end }}{{ end }}" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="column is-centered container">
+      <figure>
+        {{- with $original1 -}}
+        {{- $image1 := .Resize $size1 -}}
+          {{- if $caption1 -}}
+          <img class="rounded-corners" src="{{- $image1.RelPermalink -}}" width="{{- $image1.Width -}}" height="{{- $image1.Height -}}" alt="{{- $alt1 -}}">
+          {{- else -}}
+          <img class="rounded-corners" src="{{- $image1.RelPermalink -}}" width="{{- $image1.Width -}}" height="{{- $image1.Height -}}">
+          {{- end -}}
+          {{- if $caption1 -}}
+            <figcaption>{{- $caption1 -}}</figcaption>
+          {{- end -}}
+        {{- end -}}
+      </figure>
+    </div>
+  </div>
+</div>

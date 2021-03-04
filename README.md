@@ -82,6 +82,8 @@ E.g.: set `assetDir: "static"` to the set the default folder the `static` folder
 
 ## List of shortcodes you can use in your articles with description:
 
+A live example of these shortcodes can be found [here](https://rjordaney.is/miscellaneous/example/).
+
 <details>
 <summary> title1.html, title2.html, title3.html, title4.html, title5.html, title6.html </summary>
 
@@ -482,6 +484,10 @@ The language supported are:
 * Russian
 
 * Chinese
+
+* Polish
+
+* German
 
 If you want to add a missing language please submit a feature request.
 
